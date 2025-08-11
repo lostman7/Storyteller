@@ -1,12 +1,12 @@
 import React from 'react';
 
-const EditorView: React.FC = () => {
+const WritingCanvas: React.FC = () => {
   return (
     <div className="editor-view">
-      <h2>Editor</h2>
+      <h2>Writing Canvas</h2>
       {/* Placeholder for editor content */}
     </div>
   );
 };
 
-export default EditorView;
+export default WritingCanvas;

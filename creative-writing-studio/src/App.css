@@ -1,0 +1,9 @@
+.resize-handle {
+  width: 2px;
+  background-color: #ccc;
+  cursor: col-resize;
+}
+
+.resize-handle:hover {
+  background-color: #aaa;
+}

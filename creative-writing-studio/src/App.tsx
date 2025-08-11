@@ -1,13 +1,20 @@
 import React from 'react';
-import OutlineView from './components/OutlineView';
-import EditorView from './components/EditorView';
+import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
+import ChatPanel from './components/ChatPanel';
+import WritingCanvas from './components/WritingCanvas';
+import './App.css';
 
 const App: React.FC = () => {
   return (
-    <div className="app">
-      <OutlineView />
-      <EditorView />
-    </div>
+    <PanelGroup direction="horizontal" className="app">
+      <Panel defaultSize={30}>
+        <ChatPanel />
+      </Panel>
+      <PanelResizeHandle className="resize-handle" />
+      <Panel>
+        <WritingCanvas />
+      </Panel>
+    </PanelGroup>
   );
 };
 

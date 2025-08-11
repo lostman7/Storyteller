@@ -1,12 +1,12 @@
 import React from 'react';
 
-const OutlineView: React.FC = () => {
+const ChatPanel: React.FC = () => {
   return (
     <div className="outline-view">
-      <h2>Outline</h2>
+      <h2>Chat Panel</h2>
       {/* Placeholder for outline content */}
     </div>
   );
 };
 
-export default OutlineView;
+export default ChatPanel;
