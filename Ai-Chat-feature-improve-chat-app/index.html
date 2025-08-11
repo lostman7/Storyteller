@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Storyteller</title>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<div class="header">
+    <h1>Storyteller</h1>
+    <div class="header-controls">
+        <button id="settingsButton">Settings</button>
+        <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
+<div class="main-container">
+    <div class="chat-container">
+        <div class="chat-window" id="chatWindow"></div>
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Type your message or /write command...">
+            <button id="sendButton">Send</button>
+            <button id="voiceButton">Voice Input</button>
+        </div>
+        <div class="status-indicator">
+            <span id="modelStatus">Model Status: No Model Loaded</span><br>
+            <div class="model-selector-container">
+                <label for="modelSelector">Model:</label>
+                <select id="modelSelector"></select>
+                <button id="refreshModelsButton">Refresh</button>
+            </div>
+            <span class="memory-status" id="memoryStatus">Memory Usage: 0/500 MB</span><br>
+            <label for="ttsToggle">Text-to-Speech:</label>
+            <input type="checkbox" id="ttsToggle">
+        </div>
+        <div class="story-elements-container">
+            <h3>Story Elements</h3>
+            <div class="tabs">
+                <button id="charactersTab" class="tab-button active">Characters</button>
+            </div>
+            <div id="characters" class="tab-content" style="display: block;">
+                <input type="text" id="characterName" placeholder="Character Name">
+                <textarea id="characterDescription" placeholder="Character Description" rows="3"></textarea>
+                <button id="addCharacterButton">Add Character</button>
+                <ul id="characterList"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="canvas-container">
+        <div id="canvas" contenteditable="true" class="canvas-panel"></div>
+        <button id="readAloudButton">Read Aloud</button>
+        <button id="exportCanvasButton">Export Canvas</button>
+    </div>
+</div>
+
+<div id="settingsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="closeSettingsModal">&times;</span>
+        <h2>Settings</h2>
+        <div class="setting">
+            <label for="aiProvider">AI Provider:</label>
+            <select id="aiProvider">
+                <option value="lm-studio">LM Studio (Local)</option>
+                <option value="openai">OpenAI</option>
+                <option value="openrouter">OpenRouter</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+        <div class="setting">
+            <label for="apiUrl">API URL:</label>
+            <input type="text" id="apiUrl" placeholder="https://api.example.com/v1">
+        </div>
+        <div class="setting">
+            <label for="apiKey">API Key:</label>
+            <input type="password" id="apiKey" placeholder="Your API Key">
+        </div>
+        <div class="setting">
+            <label for="memorySize">Memory Cache Size (MB):</label>
+            <input type="number" id="memorySize" placeholder="500">
+        </div>
+        <button id="saveSettingsButton">Save Settings</button>
+    </div>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

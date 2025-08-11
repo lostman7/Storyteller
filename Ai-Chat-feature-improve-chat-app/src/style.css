@@ -1,0 +1,51 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f0f0f0; }
+.main-container { display: flex; max-width: 1200px; margin: 0 auto; }
+.chat-container { flex: 1; margin-right: 20px; }
+.chat-window { height: 400px; border: 1px solid #ccc; padding: 10px; background-color: white; overflow-y: auto; }
+.input-container { margin-top: 20px; }
+input[type="text"] { width: 70%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+button:hover { background-color: #45a049; }
+.status-indicator { margin-top: 20px; }
+.memory-status { color: #666; font-size: 14px; }
+.canvas-container { flex: 1; }
+.canvas-panel { height: 450px; border: 1px solid #ccc; padding: 10px; background-color: white; overflow-y: auto; }
+.story-elements-container { margin-top: 20px; }
+.tabs { overflow: hidden; border-bottom: 1px solid #ccc; }
+.tab-button { background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 16px; transition: 0.3s; }
+.tab-button:hover { background-color: #ddd; }
+.tab-button.active { background-color: #ccc; }
+.tab-content { padding: 6px 12px; border-top: none; }
+#characterList { list-style-type: none; padding: 0; }
+#characterList li { display: flex; justify-content: space-between; align-items: center; padding: 8px; border-bottom: 1px solid #eee; }
+.delete-character-button { background-color: #f44336; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.header-controls { display: flex; align-items: center; }
+.switch { position: relative; display: inline-block; width: 60px; height: 34px; margin-left: 20px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; }
+.slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; }
+input:checked + .slider { background-color: #2196F3; }
+input:focus + .slider { box-shadow: 0 0 1px #2196F3; }
+input:checked + .slider:before { transform: translateX(26px); }
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+.modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
+.modal-content { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 500px; }
+.close-button { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
+.close-button:hover, .close-button:focus { color: black; text-decoration: none; cursor: pointer; }
+.setting { margin-bottom: 15px; }
+.model-selector-container { display: flex; align-items: center; margin-bottom: 10px; }
+.model-selector-container label { margin-right: 10px; }
+#modelSelector { flex-grow: 1; }
+#refreshModelsButton { margin-left: 10px; }
+
+/* Dark Mode */
+body.dark-mode { background-color: #121212; color: #e0e0e0; }
+body.dark-mode .chat-window, body.dark-mode .canvas-panel, body.dark-mode .modal-content { background-color: #1e1e1e; border-color: #333; }
+body.dark-mode button { background-color: #333; }
+body.dark-mode button:hover { background-color: #444; }
+body.dark-mode input[type="text"], body.dark-mode textarea { background-color: #333; color: #e0e0e0; border-color: #555; }
+body.dark-mode .tab-button { background-color: #1e1e1e; }
+body.dark-mode .tab-button:hover { background-color: #333; }
+body.dark-mode .tab-button.active { background-color: #444; }
